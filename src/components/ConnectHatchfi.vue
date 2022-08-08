@@ -6,7 +6,8 @@ import { CheckIcon, ChevronDownIcon } from '@heroicons/vue/outline'
 
 const emit = defineEmits(['passid']);
 
-let userId = "<INPUT USERNAME HERE>"; // In this case, we'll just declare our users ID here.
+let userId = "<INPUT USERNAME HERE>"; // In this case, we'll just declare our users ID here. You'll want to generate a UUID for each user.
+const YOUR_SERVER_BASE_URL = "<YOUR SERVER BASE URL>"
 
 const publishingOptions = [
   { title: 'Ethereum', description: '0xd853f83605f7199CE2b9B61807b4084a3909F783', current: true },
@@ -21,8 +22,7 @@ const copyText = (text) => {
 }
 
 let showFrame = ref(false);
-// let linkUrl = ref("https://link.hatchfi.co/?clientId=<INPUT_CLIENTID_HERE>&token=");
-let linkUrl = ref("http://localhost:3000/?clientId=<INSERT_CLIENT_ID_HERE>&token=");
+let linkUrl = ref("https://link.hatchfi.co/?clientId=<INPUT_CLIENTID_HERE>&token=");
 let sessionToken = ref(null);
 
 onBeforeUnmount(() => {
@@ -32,7 +32,7 @@ onBeforeUnmount(() => {
 })
 
 const generateLink = async () => {
-  let userData = await axios.post("http://localhost:3003/auth-user", { userId: userId })
+  let userData = await axios.post(`${YOUR_SERVER_BASE_URL}/auth-user`, { userId: userId })
 
   sessionToken.value = userData.data.token;
   showFrame.value = true;

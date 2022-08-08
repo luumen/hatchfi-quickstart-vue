@@ -6,13 +6,14 @@ import { ref } from 'vue';
 
 let accountData = ref(null);
 let accountTransactions = ref([]);
-let userId = "hatchfi-quickstart-user-1";
+let userId = "<INPUT USERNAME HERE>"; // In this case, we'll just declare our users ID here. You'll want to generate a UUID for each user.
 let showConnect = ref(true);
+const YOUR_SERVER_BASE_URL = "<YOUR SERVER BASE URL>"
 
 const fetchAccountData = async (id) => {
   console.log(id)
 
-  let data = await axios.post("http://localhost:3003/account/all", { userId: userId, accountId: id });
+  let data = await axios.post(`${YOUR_SERVER_BASE_URL}/account/all`, { userId: userId, accountId: id });
 
   console.log(data.data)
   accountData.value = data.data.account;

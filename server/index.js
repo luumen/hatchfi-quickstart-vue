@@ -13,6 +13,7 @@ const HATCHFI_CLIENT_ID = "<ADD CLIENTID HERE>";
 const HATCHFI_API_KEY = "<ADD API KEY HERE";
 const HATCHFI_SECRET_KEY = "<ADD SECRET KEY HERE>";
 
+const YOUR_SERVER_BASE_URL = "<YOUR SERVER BASE URL>";
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -34,8 +35,7 @@ app.post("/auth-user", async (req, res) => {
 
   const options = {
     method: "POST",
-    url: "http://localhost:3001/v1/auth/login",
-    // url: "https://api.hatchfi.co/v1/auth/login",
+    url: "https://api.hatchfi.co/v1/auth/login",
     headers: {
       "X-Hatchfi-Api": HATCHFI_API_KEY,
       "X-Hatchfi-Secret": HATCHFI_SECRET_KEY,
@@ -60,7 +60,7 @@ app.post("/account/all", async (req, res) => {
   let transactions;
   var accountOptions = {
     method: "GET",
-    url: `http://localhost:3001/v1/accounts/${req.body.accountId}`,
+    url: `https://api.hatchfi.co/v1/v1/accounts/${req.body.accountId}`,
     headers: {
       "X-Hatchfi-Api": HATCHFI_API_KEY,
       "X-Hatchfi-Secret": HATCHFI_SECRET_KEY,
@@ -80,7 +80,7 @@ app.post("/account/all", async (req, res) => {
 
   var transactionsOptions = {
     method: "GET",
-    url: `http://localhost:3001/v1/accounts/${req.body.accountId}/transactions`,
+    url: `https://api.hatchfi.co/v1/accounts/${req.body.accountId}/transactions`,
     headers: {
       "X-Hatchfi-Api": HATCHFI_API_KEY,
       "X-Hatchfi-Secret": HATCHFI_SECRET_KEY,
