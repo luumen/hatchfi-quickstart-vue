@@ -7,7 +7,8 @@ This is a white label crypto portfolio tracker built in Vue3 and Vite.  This por
 
 Before you can use Hatchfi link and connect a users crypto account to the portfolio tracker, you'll need to make sure you head over to https://app.hatchfi.co, sign up for an account, and create a new project.  When you create a new project, make sure to write down your API key, your client ID, and your secret key.
 
-
+## Things to replace within the code
+In the `ConnectHatchfi.vue` file, you'll like the following: `let linkUrl = ref("http://localhost:3000/?clientId=<INSERT_CLIENT_ID_HERE>&token=");`.  Make sure you replace the <INSERT_CLIENT_ID_HERE> with your `clientid` from the Hatchfi Dashboard (https://app.hatchfi.co) -> go to projects -> copy `clientid`.
 
 
 ## Recommended IDE Setup
