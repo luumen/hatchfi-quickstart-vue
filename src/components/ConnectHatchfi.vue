@@ -6,9 +6,8 @@ import { CheckIcon, ChevronDownIcon } from '@heroicons/vue/outline'
 
 const emit = defineEmits(['passid']);
 
-<<<<<<< Updated upstream
 let userId = "<INPUT USERNAME HERE>"; // In this case, we'll just declare our users ID here.
-=======
+
 const publishingOptions = [
   { title: 'Ethereum', description: '0xd853f83605f7199CE2b9B61807b4084a3909F783', current: true },
   { title: 'Polygon', description: '0xA4FcE871c814a193Fb855330510B4C493a5F30cB', current: false },
@@ -21,8 +20,6 @@ const copyText = (text) => {
   navigator.clipboard.writeText(text);
 }
 
-let userId = "hatchfi-quickstart-user-1"; // In this case, we'll just declare our users ID here.
->>>>>>> Stashed changes
 let showFrame = ref(false);
 // let linkUrl = ref("https://link.hatchfi.co/?clientId=<INPUT_CLIENTID_HERE>&token=");
 let linkUrl = ref("http://localhost:3000/?clientId=<INSERT_CLIENT_ID_HERE>&token=");
