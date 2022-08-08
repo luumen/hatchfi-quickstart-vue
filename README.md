@@ -10,6 +10,15 @@ Before you can use Hatchfi link and connect a users crypto account to the portfo
 ## Things to replace within the code
 In the `ConnectHatchfi.vue` file, you'll like the following: `let linkUrl = ref("http://localhost:3000/?clientId=<INSERT_CLIENT_ID_HERE>&token=");`.  Make sure you replace the <INSERT_CLIENT_ID_HERE> with your `clientid` from the Hatchfi Dashboard (https://app.hatchfi.co) -> go to projects -> copy `clientid`.
 
+In the `index.js` file, we have a `clientid, secret key, and API key` that will need to be replaced on lines 12 to 14.  Again, you can access this data from the hatchfi dashboard in the projects section.
+
+```
+const HATCHFI_CLIENT_ID = "<ADD CLIENTID HERE>";
+const HATCHFI_API_KEY = "<ADD API KEY HERE";
+const HATCHFI_SECRET_KEY = "<ADD SECRET KEY HERE>";
+```
+
+
 
 ## Recommended IDE Setup
 

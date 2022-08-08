@@ -6,13 +6,13 @@ const app = express();
 const port = 3003;
 
 // For your application, we recommend setting up environment variables
-// but for our quickstart, we'll just place there here. These are test
+// but for our quickstart, we'll just place them here. These are test
 // keys and are safe for public view. Keep your keys secret!
-const HATCHFI_CLIENT_ID = "70877d99031afd61bbe0bc73b9e171604272e44bb12fd12591d1142cc14adca6";
-const HATCHFI_API_KEY = "0041a7fecc2e47838bb32708b233e622";
-const HATCHFI_SECRET_KEY = "f9dc6d8458ceff284ef79f838f0232757a3ed8b4060eb2c2";
-// const HATCHFI_API_KEY = "1b4d1ff5f0124e08834c4cc7123d90c0";
-// const HATCHFI_SECRET_KEY = "40fca7b0d9c8dbf9d3a1696da794226ed29339689ed93078";
+// Make sure you replace the below keys with the keys from your Hatchfi app project in the dashboard
+const HATCHFI_CLIENT_ID = "<ADD CLIENTID HERE>";
+const HATCHFI_API_KEY = "<ADD API KEY HERE";
+const HATCHFI_SECRET_KEY = "<ADD SECRET KEY HERE>";
+
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
