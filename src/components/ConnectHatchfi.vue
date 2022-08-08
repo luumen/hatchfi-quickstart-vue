@@ -6,10 +6,10 @@ import { CheckIcon } from '@heroicons/vue/outline'
 
 const emit = defineEmits(['passid']);
 
-let userId = "hatchfi-quickstart-user-1"; // In this case, we'll just declare our users ID here.
+let userId = "<INPUT USERNAME HERE>"; // In this case, we'll just declare our users ID here.
 let showFrame = ref(false);
-// let linkUrl = ref("https://link.hatchfi.co/?clientId=70877d99031afd61bbe0bc73b9e171604272e44bb12fd12591d1142cc14adca6&token=");
-let linkUrl = ref("http://localhost:3000/?clientId=b5b8b63e5c9542ae3240887a9bf5b3b8167db42c61051dd96a571bf5634d5162&token=");
+// let linkUrl = ref("https://link.hatchfi.co/?clientId=<INPUT_CLIENTID_HERE>&token=");
+let linkUrl = ref("http://localhost:3000/?clientId=<INSERT_CLIENT_ID_HERE>&token=");
 let sessionToken = ref(null);
 
 onBeforeUnmount(() => {
