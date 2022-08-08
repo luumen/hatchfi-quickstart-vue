@@ -1,6 +1,14 @@
 # hatchfi-quickstart-vue
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a white label crypto portfolio tracker built in Vue3 and Vite.  This portfolio tracker uses the Hatchfi API and Hatchfi Link to connect a user to their crypto account and pull that data into table.
+
+![Example](/src/assets/qwik.gif "Portfolio Tracker")
+
+
+Before you can use Hatchfi link and connect a users crypto account to the portfolio tracker, you'll need to make sure you head over to https://app.hatchfi.co, sign up for an account, and create a new project.  When you create a new project, make sure to write down your API key, your client ID, and your secret key.
+
+
+
 
 ## Recommended IDE Setup
 
