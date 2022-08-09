@@ -1,5 +1,7 @@
 # Hatchfi White Label Portfolio Tracker App
 
+Sign up for free today at https://hatchfi.co/signup
+
 This is a white label crypto portfolio tracker built in Vue3 and Vite.  This portfolio tracker uses the Hatchfi API and Hatchfi Link to connect a user to their crypto account and pull that data into table.
 
 ![Example](/src/assets/qwik.gif "Portfolio Tracker")
