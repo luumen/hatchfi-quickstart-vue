@@ -16,7 +16,7 @@ Follow the onboarding steps in order to create a new project and make sure to wr
 In the `ConnectHatchfi.vue` file, you'll like the following: 
 `let linkUrl = ref("https://link.hatchfi.co/?clientId=<INSERT_CLIENT_ID_HERE>&token=<USER_GENERATED_TOKEN>");`
 
-Make sure you replace the <INSERT_CLIENT_ID_HERE> with your `clientid` from the Hatchfi Dashboard (https://app.hatchfi.co) -> go to projects -> copy `clientid`. 
+Make sure you replace the `<INSERT_CLIENT_ID_HERE>` with your `clientid` from the Hatchfi Dashboard (https://app.hatchfi.co) -> go to projects -> copy `clientid`. 
 
 In `ConnectHatchfi.vue` you can use whatever you want to pass in as a `user` for Link.  
 
