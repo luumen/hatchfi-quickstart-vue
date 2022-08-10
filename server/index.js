@@ -9,11 +9,16 @@ const port = 3003;
 // but for our quickstart, we'll just place them here. These are test
 // keys and are safe for public view. Keep your keys secret!
 // Make sure you replace the below keys with the keys from your Hatchfi app project in the dashboard
-const HATCHFI_CLIENT_ID = "<ADD CLIENTID HERE>";
-const HATCHFI_API_KEY = "<ADD API KEY HERE";
-const HATCHFI_SECRET_KEY = "<ADD SECRET KEY HERE>";
+// const HATCHFI_CLIENT_ID = "<ADD CLIENTID HERE>";
+// const HATCHFI_API_KEY = "<ADD API KEY HERE";
+// const HATCHFI_SECRET_KEY = "<ADD SECRET KEY HERE>";
 
-const YOUR_SERVER_BASE_URL = "<YOUR SERVER BASE URL>";
+// const YOUR_SERVER_BASE_URL = "<YOUR SERVER BASE URL>";
+
+const HATCHFI_CLIENT_ID = "b5b8b63e5c9542ae3240887a9bf5b3b8167db42c61051dd96a571bf5634d5162";
+const HATCHFI_API_KEY = "0041a7fecc2e47838bb32708b233e622";
+const HATCHFI_SECRET_KEY = "f9dc6d8458ceff284ef79f838f0232757a3ed8b4060eb2c2";
+const YOUR_SERVER_BASE_URL = "http://localhost:3003";
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -35,7 +40,8 @@ app.post("/auth-user", async (req, res) => {
 
   const options = {
     method: "POST",
-    url: "https://api.hatchfi.co/v1/auth/login",
+    // url: "https://api.hatchfi.co/v1/auth/login",
+    url: "http://localhost:3001/v1/auth/login",
     headers: {
       "X-Hatchfi-Api": HATCHFI_API_KEY,
       "X-Hatchfi-Secret": HATCHFI_SECRET_KEY,
@@ -60,7 +66,8 @@ app.post("/account/all", async (req, res) => {
   let transactions;
   var accountOptions = {
     method: "GET",
-    url: `https://api.hatchfi.co/v1/v1/accounts/${req.body.accountId}`,
+    // url: `https://api.hatchfi.co/v1/accounts/${req.body.accountId}`,
+    url: `http://localhost:3001/v1/accounts/${req.body.accountId}`,
     headers: {
       "X-Hatchfi-Api": HATCHFI_API_KEY,
       "X-Hatchfi-Secret": HATCHFI_SECRET_KEY,
@@ -80,7 +87,8 @@ app.post("/account/all", async (req, res) => {
 
   var transactionsOptions = {
     method: "GET",
-    url: `https://api.hatchfi.co/v1/accounts/${req.body.accountId}/transactions`,
+    // url: `https://api.hatchfi.co/v1/accounts/${req.body.accountId}/transactions`,
+    url: `http://localhost:3001/v1/accounts/${req.body.accountId}/transactions`,
     headers: {
       "X-Hatchfi-Api": HATCHFI_API_KEY,
       "X-Hatchfi-Secret": HATCHFI_SECRET_KEY,

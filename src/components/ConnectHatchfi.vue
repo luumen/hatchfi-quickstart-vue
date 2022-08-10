@@ -6,8 +6,10 @@ import { CheckIcon, ChevronDownIcon } from '@heroicons/vue/outline'
 
 const emit = defineEmits(['passid']);
 
-let userId = "<INPUT USERNAME HERE>"; // In this case, we'll just declare our users ID here. You'll want to generate a UUID for each user.
-const YOUR_SERVER_BASE_URL = "<YOUR SERVER BASE URL>"
+// let userId = "<INPUT USERNAME HERE>"; // In this case, we'll just declare our users ID here. You'll want to generate a UUID for each user.
+// const YOUR_SERVER_BASE_URL = "<YOUR SERVER BASE URL>"
+let userId = "hatchfi-test-portfolio";
+const YOUR_SERVER_BASE_URL = "http://localhost:3003"
 
 const publishingOptions = [
   { title: 'Ethereum', description: '0xd853f83605f7199CE2b9B61807b4084a3909F783', current: true },
@@ -22,7 +24,8 @@ const copyText = (text) => {
 }
 
 let showFrame = ref(false);
-let linkUrl = ref("https://link.hatchfi.co/?clientId=<INPUT_CLIENTID_HERE>&token=");
+// let linkUrl = ref("https://link.hatchfi.co/?clientId=<INPUT_CLIENTID_HERE>&token=");
+let linkUrl = ref("http://localhost:3000/?clientId=b5b8b63e5c9542ae3240887a9bf5b3b8167db42c61051dd96a571bf5634d5162&token=");
 let sessionToken = ref(null);
 
 onBeforeUnmount(() => {
@@ -36,6 +39,8 @@ const generateLink = async () => {
 
   sessionToken.value = userData.data.token;
   showFrame.value = true;
+
+  console.log(linkUrl.value + sessionToken.value)
 
   window.addEventListener("message", (event) => {
     if (event.data.hatchfi) {

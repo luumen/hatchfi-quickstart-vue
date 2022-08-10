@@ -6,9 +6,11 @@ import { ref } from 'vue';
 
 let accountData = ref(null);
 let accountTransactions = ref([]);
-let userId = "<INPUT USERNAME HERE>"; // In this case, we'll just declare our users ID here. You'll want to generate a UUID for each user.
+// let userId = "<INPUT USERNAME HERE>"; // In this case, we'll just declare our users ID here. You'll want to generate a UUID for each user.
+let userId = "hatchfi-test-portfolio"; // In this case, we'll just declare our users ID here. You'll want to generate a UUID for each user.
 let showConnect = ref(true);
-const YOUR_SERVER_BASE_URL = "<YOUR SERVER BASE URL>"
+// const YOUR_SERVER_BASE_URL = "<YOUR SERVER BASE URL>"
+const YOUR_SERVER_BASE_URL = "http://localhost:3003"
 
 const fetchAccountData = async (id) => {
   console.log(id)
