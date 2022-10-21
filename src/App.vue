@@ -6,18 +6,13 @@ import { ref } from 'vue';
 
 let accountData = ref(null);
 let accountTransactions = ref([]);
-// let userId = "<INPUT USERNAME HERE>"; // In this case, we'll just declare our users ID here. You'll want to generate a UUID for each user.
-let userId = "hatchfi-test-portfolio"; // In this case, we'll just declare our users ID here. You'll want to generate a UUID for each user.
+let userId = "hatchfi-portfolio"; // In this case, we'll just declare our users ID here. You'll want to generate a UUID for each user. for this example, we hardcode a uuid
 let showConnect = ref(true);
-// const YOUR_SERVER_BASE_URL = "<YOUR SERVER BASE URL>"
-const YOUR_SERVER_BASE_URL = "http://localhost:3003"
+const YOUR_SERVER_BASE_URL = import.meta.env.VITE_SERVER_BASE_URL;
 
 const fetchAccountData = async (id) => {
-  console.log(id)
-
   let data = await axios.post(`${YOUR_SERVER_BASE_URL}/account/all`, { userId: userId, accountId: id });
 
-  console.log(data.data)
   accountData.value = data.data.account;
   accountTransactions.value = data.data.transactions;
   showConnect.value = false;

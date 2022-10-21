@@ -7,6 +7,7 @@
       </div>
     </div>
     <ul role="list" class="mt-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <!-- For loop that iterates through the accounts balances, if any. -->
       <li v-for="balance in balances.balances" :key="balance.amount" class="col-span-1 flex shadow-sm rounded-md">
         <div class="flex-shrink-0 bg-emerald-100 flex items-center justify-center w-16 text-emerald-700 text-sm font-semibold rounded-l-md">
           {{ balance.ticker }}
@@ -25,20 +26,25 @@
           <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
             <table class="min-w-full divide-y divide-gray-300 py-20">
               <thead class="bg-gray-50">
+                <!-- These are the table head titles -->
+                <!-- If you want to add or remove a row, be sure to do it here and in the table rows -->
                 <tr>
                   <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Ticker</th>
                   <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Amount</th>
                   <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Fiat Value</th>
                   <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Other Address</th>
+                  <!-- Add a date column to practice -->
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-200 bg-white">
-                <tr v-for="(transaction, index) in transactions" :key="index">
+                <!-- For loop that iterates through our transactions -->
+                <tr v-for="(transaction, index) in transactions.sort((a,b)=>b.confirmedAt-a.confirmedAt)" :key="index">
                   <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ transaction.parts[0].ticker }}</td>
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ transaction.parts[0].amount }} {{ transaction.parts[0].ticker }}
                   </td>
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">${{ transaction.parts[0].fiatValue }}</td>
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ transaction.parts[0].otherParties[0] }}</td>
+                  <!-- Add a date column to practice -->
                 </tr>
               </tbody>
             </table>
