@@ -71,7 +71,6 @@ app.post("/account/all", async (req, res) => {
   await axios
     .request(accountOptions)
     .then(function (response) {
-      console.log(response.data);
       account = response.data;
     })
     .catch(function (error) {
@@ -91,7 +90,6 @@ app.post("/account/all", async (req, res) => {
   await axios
     .request(transactionsOptions)
     .then(function (response) {
-      console.log(response.data);
       transactions = response.data;
     })
     .catch(function (error) {
