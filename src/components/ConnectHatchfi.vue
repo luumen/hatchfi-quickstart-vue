@@ -28,8 +28,7 @@ const copyText = (text) => {
 }
 
 let showFrame = ref(false);
-// let linkUrl = ref(`https://link.hatchfi.co/?clientId=${HATCHFI_CLIENT_ID}&token=`);
-let linkUrl = ref(`https://devlink.hatchfi.co/?clientId=${HATCHFI_CLIENT_ID}&token=`);
+let linkUrl = ref(`https://link.hatchfi.co/?clientId=${HATCHFI_CLIENT_ID}&token=`);
 let sessionToken = ref(null);
 
 // We set up a listener here to let us know when the user wants to close Hatchfi Link.

@@ -34,8 +34,7 @@ app.post("/auth-user", async (req, res) => {
 
   const options = {
     method: "POST",
-    // url: "https://api.hatchfi.co/v1/auth/login",
-    url: "https://devapi.hatchfi.co/v1/auth/login",
+    url: "https://api.hatchfi.co/v1/auth/login",
     headers: {
       "X-Hatchfi-Api": HATCHFI_API_KEY,
       "X-Hatchfi-Secret": HATCHFI_SECRET_KEY,
@@ -61,7 +60,7 @@ app.post("/account/all", async (req, res) => {
   let transactions;
   var accountOptions = {
     method: "GET",
-    url: `https://devapi.hatchfi.co/v1/accounts/${req.body.accountId}`, // This endpoint is responsible for grabbing the specified accounts balance data
+    url: `https://api.hatchfi.co/v1/accounts/${req.body.accountId}`, // This endpoint is responsible for grabbing the specified accounts balance data
     headers: {
       "X-Hatchfi-Api": HATCHFI_API_KEY,
       "X-Hatchfi-Secret": HATCHFI_SECRET_KEY,
@@ -81,7 +80,7 @@ app.post("/account/all", async (req, res) => {
 
   var transactionsOptions = {
     method: "GET",
-    url: `https://devapi.hatchfi.co/v1/accounts/${req.body.accountId}/transactions`, // This endpoint is responsible for grabbing all of the specified accounts transactions
+    url: `https://api.hatchfi.co/v1/accounts/${req.body.accountId}/transactions`, // This endpoint is responsible for grabbing all of the specified accounts transactions
     headers: {
       "X-Hatchfi-Api": HATCHFI_API_KEY,
       "X-Hatchfi-Secret": HATCHFI_SECRET_KEY,
