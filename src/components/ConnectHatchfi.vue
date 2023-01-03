@@ -51,7 +51,7 @@ const generateLink = async () => {
     if (event.data.hatchfi) {
       console.log(event.data)
       if (event.data.result.status == "success") {
-        console.log("Pass id to app", event.data.result.data.accountId)
+        localStorage.setItem("hatchfi-demo-account-id", event.data.result.data.accountId)
         emit('passid', event.data.result.data.accountId);
       } else if (event.data.result.status == "close") {
         showFrame.value = false;
